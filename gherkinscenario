@@ -16,7 +16,7 @@ When I select the “<product>”
 Then I should see detailed information about the selected product
 
 Examples:
-| Product		| 
+| Product		          | 
 | sauce labs backpack	| 
 
 Scenario: Sorting product by different criteria
@@ -25,11 +25,11 @@ When I sort products by <criteria>
 Then the products should be sorted in <order>
 
 Examples:
-| Criteria		| order           |
-| Name (A to Z) 		| Ascending   |
-| Name (Z to A) 		| Descending |
+| Criteria	         	| order       |
+| Name (A to Z) 		  | Ascending   |
+| Name (Z to A) 		  | Descending  |
 | Price (low to high)	| Ascending   |
-| Price (low to high) 	| Descending |
+| Price (low to high) | Descending  |
 
 Scenario: Add a product to the cart
 Given I am on the product home page
@@ -39,8 +39,6 @@ And I navigate back to the product home page
 When I select “<product>”
 And I add the selected product to my cart
 Then the “<product>” should be in my cart
-
-
 
 Examples:
 | Product		| 
@@ -52,10 +50,9 @@ When I remove the product from “<location>”
 Then the “<product>” should be remove from my “<location>”
 
 Examples:
-| product		| location                        |
-| sauce labs backpack	| product home page   |
-| sauce labs bike light     | cart                               |
-
+| product		            | location           |
+| sauce labs backpack	  | product home page  |
+| sauce labs bike light | cart               |
 
 3. Feature 3: Checkout Process
 Scenario: Successful checkout products 
