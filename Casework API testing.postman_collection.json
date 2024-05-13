@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "d0d0a2d7-af29-4430-bfdf-af2974ce5068",
+		"name": "Casework API testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17498710"
+	},
+	"item": [
+		{
+			"name": "CreateNewUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "cf73a2fceeb928a1fef708b41511ad3a12160d2561acd5a4db96ee216d806147"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer ACCESS-TOKEN"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\":\"Nepy\",\n\"gender\":\"female\",\n\"email\":\"nepy@gmail.com\",\n\"status\":\"active\"\n}\n"
+				},
+				"url": "https://gorest.co.in/public/v2/users"
+			},
+			"response": []
+		},
+		{
+			"name": "UserDetail",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUserDetail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "cf73a2fceeb928a1fef708b41511ad3a12160d2561acd5a4db96ee216d806147"
+					}
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer ACCESS-TOKEN"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Nepy\", \"email\":\"nepy02@gmail\", \"status\":\"active\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/users/6901137"
+			},
+			"response": []
+		}
+	]
+}
