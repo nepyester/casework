@@ -1,0 +1,78 @@
+1. Feature 1: User Login and Logout
+Scenario: Successful login with valid credentials
+Given I am on the login page
+When I enter valid username and password
+Then I should redirect to product page
+
+Scenario: Successful logout
+Given: I am logged in to the Saucedemo website
+When I choose to log out
+Then I should be redirected to the login page
+
+2. Feature 2: Product search and selection
+Scenario: View Product Details
+Given I am on the product page
+When I select the “<product>”
+Then I should see detailed information about the selected product
+
+Examples:
+| Product		| 
+| sauce labs backpack	| 
+
+Scenario: Sorting product by different criteria
+Given I am on the product page
+When I sort products by <criteria>
+Then the products should be sorted in <order>
+
+Examples:
+| Criteria		| order           |
+| Name (A to Z) 		| Ascending   |
+| Name (Z to A) 		| Descending |
+| Price (low to high)	| Ascending   |
+| Price (low to high) 	| Descending |
+
+Scenario: Add a product to the cart
+Given I am on the product home page
+When I add “<product>” to my cart
+Then the “<product>” should be in my cart
+And I navigate back to the product home page
+When I select “<product>”
+And I add the selected product to my cart
+Then the “<product>” should be in my cart
+
+
+
+Examples:
+| Product		| 
+| sauce labs backpack	| 
+
+Scenario: Remove a product from the product home or cart page
+Given I have “<product>” in my cart
+When I remove the product from “<location>”
+Then the “<product>” should be remove from my “<location>”
+
+Examples:
+| product		| location                        |
+| sauce labs backpack	| product home page   |
+| sauce labs bike light     | cart                               |
+
+
+3. Feature 3: Checkout Process
+Scenario: Successful checkout products 
+Given I have products in my cart
+When I proceed to checkout
+And I am prompted to enter my first name, last name, and postal code
+Then I enter “nepy” as my first name, “ester” as my last name and “11450” as the postal code
+And I click on the “continue” button
+And I am navigated to checkout overview page
+Then I verify that my information is displayed correctly
+When I click “finish” button
+Then the order should be completed successfully
+When I click “Back home” button
+Then I should be directed to home page 
+
+
+
+
+
+
